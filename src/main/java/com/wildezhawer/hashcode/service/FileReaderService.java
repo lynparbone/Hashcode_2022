@@ -2,7 +2,7 @@ package com.wildezhawer.hashcode.service;
 
 import com.wildezhawer.hashcode.model.Contributor;
 import com.wildezhawer.hashcode.model.Project;
-import com.wildezhawer.hashcode.model.Skill;
+import com.wildezhawer.hashcode.model.Role;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -56,10 +56,10 @@ public class FileReaderService {
                     // Roles
                     line = br.readLine();
                     items = line.split(" ");
-                    Skill skill = new Skill();
-                    skill.name = items[0];
-                    skill.level = Integer.parseInt(items[1]);
-                    project.roles.add(skill);
+                    Role role = new Role();
+                    role.skillName = items[0];
+                    role.level = Integer.parseInt(items[1]);
+                    project.roles.add(role);
                 }
                 DataStore.projects.add(project);
             }
